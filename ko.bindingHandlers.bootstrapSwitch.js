@@ -7,9 +7,9 @@ ko.bindingHandlers.bootstrapSwitch = {
         $(element).bootstrapSwitch('state', valueAccessor()());
 
         //handle the field changing
-        ko.utils.registerEventHandler(element, "change", function () {
+	$(element).on('switchChange.bootstrapSwitch', function (event, state) {
             var observable = valueAccessor();
-            observable($(element).bootstrapSwitch("state"));
+            observable(state);            
         });
 
         // Adding component options
