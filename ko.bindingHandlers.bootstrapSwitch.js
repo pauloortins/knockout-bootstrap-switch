@@ -4,7 +4,7 @@ ko.bindingHandlers.bootstrapSwitch = {
         $(element).bootstrapSwitch();
 
         // setting initial value
-        $(element).bootstrapSwitch('state', valueAccessor()());
+        $(element).bootstrapSwitch('state', ko.utils.unwrapObservable(valueAccessor());
 
         //handle the field changing
 	$(element).on('switchChange.bootstrapSwitch', function (event, state) {
